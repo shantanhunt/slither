@@ -15,6 +15,12 @@ Slither is a Solidity static analysis framework written in Python 3. It runs a s
 - [Getting Help](#getting-help)
 - [Publications](#publications)
 
+## Important Commands to run with Truffle projects
+```bash
+slither contracts/Contract.sol --solc-remaps @openzeppelin/=$(pwd)/node_modules/@openzeppelin/
+```
+- https://ethereum.stackexchange.com/questions/91593/slither-not-working-with-truffle-imports
+
 ## Features
 
 * Detects vulnerable Solidity code with low false positives (see the list of [trophies](./trophies.md))
