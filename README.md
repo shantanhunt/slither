@@ -15,6 +15,29 @@ Slither is a Solidity static analysis framework written in Python 3. It runs a s
 - [Getting Help](#getting-help)
 - [Publications](#publications)
 
+## Using with docker
+
+```bash
+docker pull trailofbits/eth-security-toolbox
+```
+
+After that note that you have to specify the path for the code directory correctly. Follow the below command for this
+
+```bash
+docker run -it -v /home/share:/share trailofbits/eth-security-toolbox
+```
+
+In the home directory there is always the username directly (say user). And say all the code resides in its sub-directory called code. Then the command to share it with the docker container will be
+docker run -it -v /home/user/code:/code trailofbits/eth-security-toolbox
+
+After this, when you are inside the container, you will need to run
+
+```bash
+cd ..
+```
+
+a couple of times to finally find the directory code. 
+
 ## Important Commands to run with Truffle projects
 ```bash
 slither contracts/Contract.sol --solc-remaps @openzeppelin/=$(pwd)/node_modules/@openzeppelin/
